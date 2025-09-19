@@ -16,7 +16,6 @@
         .chart-container {
             position: relative;
             width: 100%;
-            
             margin-left: auto;
             margin-right: auto;
             height: 400px;
@@ -183,11 +182,26 @@
                             </div>
 
                             <div class="mb-6">
-                                <h4 class="font-bold text-[#374C80] mb-2 text-center">Benefit 1: 직접적인 세금 환급 효과</h4>
-                                 <div class="chart-container" style="height:280px; max-height:300px;">
-                                    <canvas id="taxBenefitChart"></canvas>
+                                <h4 class="font-bold text-[#374C80] mb-2 text-center">Benefit 1: 내 환급액 계산해보기</h4>
+                                 <div class="bg-white p-4 rounded-lg shadow-inner space-y-4">
+                                    <div>
+                                        <label for="annualSalary" class="block text-sm font-medium text-gray-700">총급여액 (만원)</label>
+                                        <input type="number" id="annualSalary" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="예: 5000">
+                                    </div>
+                                    <div>
+                                        <label for="contributionAmount" class="block text-sm font-medium text-gray-700">연간 납입액 (만원)</label>
+                                        <input type="number" id="contributionAmount" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="예: 900">
+                                    </div>
+                                    <button id="calculateBtn" class="w-full bg-[#003F5C] text-white font-bold py-2 px-4 rounded-md hover:bg-[#374C80] transition-colors">
+                                        환급액 계산하기
+                                    </button>
+                                    <div id="refundResult" class="text-center pt-4">
+                                        <p class="text-gray-600">예상 환급액이 여기에 표시됩니다.</p>
+                                    </div>
+                                     <p class="text-xs text-center text-gray-500 pt-3 border-t border-gray-200">
+                                        * 현행 세법상 연금계좌의 최대 세액공제 환급액은 148.5만원(총급여 5,500만원 이하 기준)입니다.
+                                    </p>
                                 </div>
-                                <p class="text-center text-sm text-gray-600 mt-2">연 900만원 납입 시(총급여 5,500만원 이하), 연말정산으로 <strong class="text-xl text-[#EF5675]">148.5만원</strong>이 환급됩니다.</p>
                             </div>
                             
                             <div class="mb-6">
@@ -455,42 +469,29 @@
                 }
             });
 
-            const taxBenefitCtx = document.getElementById('taxBenefitChart').getContext('2d');
-            new Chart(taxBenefitCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['실 납입액', '세금 환급액'],
-                    datasets: [{
-                        data: [751.5, 148.5],
-                        backgroundColor: ['#003F5C', '#FFA600'],
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '60%',
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        },
-                        tooltip: {
-                             callbacks: {
-                                title: chartTooltipTitleCallback,
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    if (context.parsed !== null) {
-                                        label += context.parsed.toLocaleString() + '만원';
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    }
+            const calculateBtn = document.getElementById('calculateBtn');
+            const annualSalaryInput = document.getElementById('annualSalary');
+            const contributionAmountInput = document.getElementById('contributionAmount');
+            const refundResultDiv = document.getElementById('refundResult');
+
+            calculateBtn.addEventListener('click', () => {
+                const salary = parseFloat(annualSalaryInput.value) || 0;
+                const contribution = parseFloat(contributionAmountInput.value) || 0;
+
+                if (salary <= 0 || contribution <= 0) {
+                    refundResultDiv.innerHTML = `<p class="text-red-600 font-bold">총급여액과 납입액을 정확히 입력해주세요.</p>`;
+                    return;
                 }
+
+                const taxCreditRate = salary <= 5500 ? 0.165 : 0.132;
+                const taxCreditLimit = Math.min(contribution, 900);
+                const refundAmount = taxCreditLimit * taxCreditRate;
+
+                refundResultDiv.innerHTML = `
+                    <p class="text-gray-600">총급여 <strong class="text-[#003F5C]">${salary.toLocaleString()}만원</strong>, 납입액 <strong class="text-[#003F5C]">${contribution.toLocaleString()}만원</strong>일 경우</p>
+                    <p class="text-xl md:text-2xl font-bold text-[#EF5675] mt-2">예상 환급액: 약 ${refundAmount.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}만원</p>
+                    <p class="text-xs text-gray-500 mt-1">(세액공제 한도: ${taxCreditLimit}만원, 공제율: ${(taxCreditRate * 100)}%)</p>
+                `;
             });
 
             const taxDeferralCtx = document.getElementById('taxDeferralChart').getContext('2d');
