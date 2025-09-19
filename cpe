@@ -16,13 +16,13 @@
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            
             margin-left: auto;
             margin-right: auto;
             height: 400px;
             max-height: 450px;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 100%) {
             .chart-container {
                 height: 350px;
             }
@@ -31,7 +31,7 @@
 </head>
 <body class="bg-gray-100">
 
-    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+    <div class="container mx-auto p-4 md:p-8">
 
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-black text-[#003F5C] mb-2">사적연금제도</h1>
@@ -39,311 +39,327 @@
         </header>
 
         <section id="part1" class="mb-12">
-            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-[#003F5C] border-b-4 border-[#FFA600] pb-2 mb-6">제1부: 퇴직급여제도 - 노후의 첫 단추</h2>
-                <p class="text-gray-700 mb-8">근로자의 기본적인 노후 소득 기반이 되는 퇴직급여제도는 운용 주체와 방식에 따라 크게 확정급여형(DB)과 확정기여형(DC)으로 나뉩니다. 각 제도의 특징을 비교하여 나에게 맞는 유형을 선택하는 것이 중요합니다.</p>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C] border-b-4 border-[#FFA600] pb-2 mb-6">제1부: 퇴직급여제도 - 노후의 첫 단추</h2>
+                    <p class="text-gray-700 mb-8">근로자의 기본적인 노후 소득 기반이 되는 퇴직급여제도는 운용 주체와 방식에 따라 크게 확정급여형(DB)과 확정기여형(DC)으로 나뉩니다. 각 제도의 특징을 비교하여 나에게 맞는 유형을 선택하는 것이 중요합니다.</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-xl font-bold text-[#374C80] mb-4 text-center">DB vs DC 핵심 비교</h3>
-                        <div class="chart-container">
-                            <canvas id="dbDcChart"></canvas>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#374C80] mb-4 text-center">DB vs DC 핵심 비교</h3>
+                            <div class="chart-container">
+                                <canvas id="dbDcChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#374C80] mb-4 text-center">나는 어떤 유형일까? 선택 가이드</h3>
+                            <div class="border-2 border-gray-200 rounded-lg p-4 space-y-4">
+                                <div class="text-center bg-blue-50 p-3 rounded-md">
+                                    <p class="font-semibold text-gray-800">Q. 안정적인 노후 자금 예측이 중요한가요?</p>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <div class="w-px h-8 bg-gray-300"></div>
+                                </div>
+                                 <div class="flex justify-around text-center">
+                                    <div class="flex flex-col items-center">
+                                        <p class="font-bold text-[#7A5195]">YES</p>
+                                        <div class="w-px h-4 bg-gray-300 my-1"></div>
+                                        <div class="bg-[#7A5195] text-white font-bold p-3 rounded-lg shadow-md">안정적인 DB형 추천</div>
+                                         <p class="text-xs text-gray-600 mt-2">운용 성과와 무관하게<br>정해진 금액 수령</p>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <p class="font-bold text-[#EF5675]">NO</p>
+                                        <div class="w-px h-4 bg-gray-300 my-1"></div>
+                                        <p class="font-semibold text-gray-800 bg-blue-50 p-3 rounded-md">Q. 투자에 자신 있고, 추가 수익을 원하나요?</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                   <div class="w-1/2 flex justify-center items-center">
+                                       <div class="w-px h-8 bg-gray-300"></div>
+                                   </div>
+                                </div>
+                                <div class="flex justify-end text-center">
+                                   <div class="w-1/2 flex justify-around">
+                                       <div class="flex flex-col items-center">
+                                           <p class="font-bold text-[#EF5675]">YES</p>
+                                           <div class="w-px h-4 bg-gray-300 my-1"></div>
+                                           <div class="bg-[#EF5675] text-white font-bold p-3 rounded-lg shadow-md">수익 추구 DC형 추천</div>
+                                           <p class="text-xs text-gray-600 mt-2">개인의 운용 성과에 따라<br>퇴직급여 변동</p>
+                                       </div>
+                                       <div class="flex flex-col items-center">
+                                           <p class="font-bold text-[#7A5195]">NO</p>
+                                           <div class="w-px h-4 bg-gray-300 my-1"></div>
+                                           <div class="bg-[#7A5195] text-white font-bold p-3 rounded-lg shadow-md">안정적인 DB형 추천</div>
+                                           <p class="text-xs text-gray-600 mt-2">회사가 운용을 책임져<br>투자에 대한 부담 없음</p>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-[#374C80] mb-4 text-center">나는 어떤 유형일까? 선택 가이드</h3>
-                        <div class="border-2 border-gray-200 rounded-lg p-4 space-y-4">
-                            <div class="text-center bg-blue-50 p-3 rounded-md">
-                                <p class="font-semibold text-gray-800">Q. 안정적인 노후 자금 예측이 중요한가요?</p>
+
+                    <div class="mt-10 border-t-2 border-gray-100 pt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-center text-[#7A5195] mb-4">DB형 상세 분석</h4>
+                            <div class="mb-4">
+                                <p class="font-semibold text-green-600">👍 장점</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
+                                    <li><strong>높은 안정성:</strong> 정해진 금액을 수령하여 노후 예측이 용이.</li>
+                                    <li><strong>임금 상승 반영:</strong> 승진 등 퇴직 직전 임금 상승 시 퇴직급여도 증가.</li>
+                                    <li><strong>운용 편의성:</strong> 회사가 운용을 책임져 투자 부담 없음.</li>
+                                </ul>
                             </div>
-                            <div class="flex justify-center items-center">
-                                <div class="w-px h-8 bg-gray-300"></div>
+                            <div>
+                                <p class="font-semibold text-red-600">👎 단점</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
+                                    <li><strong>수익성 한계:</strong> 개인의 투자 성과가 반영되지 않아 추가 수익 기대 어려움.</li>
+                                    <li><strong>임금피크제 취약:</strong> 퇴직 전 임금 삭감 시 퇴직급여도 함께 감소.</li>
+                                    <li><strong>기업 리스크:</strong> 회사 재정 악화 시 적립금 부족 사태 발생 가능.</li>
+                                </ul>
                             </div>
-                             <div class="flex justify-around text-center">
-                                <div class="flex flex-col items-center">
-                                    <p class="font-bold text-[#7A5195]">YES</p>
-                                    <div class="w-px h-4 bg-gray-300 my-1"></div>
-                                    <div class="bg-[#7A5195] text-white font-bold p-3 rounded-lg shadow-md">안정적인 DB형 추천</div>
-                                     <p class="text-xs text-gray-600 mt-2">운용 성과와 무관하게<br>정해진 금액 수령</p>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <p class="font-bold text-[#EF5675]">NO</p>
-                                    <div class="w-px h-4 bg-gray-300 my-1"></div>
-                                    <p class="font-semibold text-gray-800 bg-blue-50 p-3 rounded-md">Q. 투자에 자신 있고, 추가 수익을 원하나요?</p>
-                                </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-center text-[#EF5675] mb-4">DC형 상세 분석</h4>
+                            <div class="mb-4">
+                                <p class="font-semibold text-green-600">👍 장점</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
+                                    <li><strong>높은 수익 기대:</strong> 운용 성과에 따라 퇴직 자산을 크게 늘릴 수 있음.</li>
+                                    <li><strong>임금피크제 무관:</strong> 매년 임금총액 기준으로 적립되어 영향 없음.</li>
+                                    <li><strong>중도 인출 가능:</strong> 법정 사유 발생 시 긴급 자금으로 활용 가능.</li>
+                                </ul>
                             </div>
-                            <div class="flex justify-end">
-                               <div class="w-1/2 flex justify-center items-center">
-                                   <div class="w-px h-8 bg-gray-300"></div>
-                               </div>
+                            <div>
+                                <p class="font-semibold text-red-600">👎 단점</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
+                                    <li><strong>원금 손실 위험:</strong> 투자 성과가 저조할 경우 퇴직급여 감소 가능.</li>
+                                    <li><strong>개인의 운용 책임:</strong> 모든 운용 책임이 근로자 본인에게 있음.</li>
+                                    <li><strong>투자 지식 필요:</strong> 수익률 제고를 위해 지속적인 학습과 관심 요구.</li>
+                                </ul>
                             </div>
-                            <div class="flex justify-end text-center">
-                               <div class="w-1/2 flex justify-around">
-                                   <div class="flex flex-col items-center">
-                                       <p class="font-bold text-[#EF5675]">YES</p>
-                                       <div class="w-px h-4 bg-gray-300 my-1"></div>
-                                       <div class="bg-[#EF5675] text-white font-bold p-3 rounded-lg shadow-md">수익 추구 DC형 추천</div>
-                                       <p class="text-xs text-gray-600 mt-2">개인의 운용 성과에 따라<br>퇴직급여 변동</p>
-                                   </div>
-                                   <div class="flex flex-col items-center">
-                                       <p class="font-bold text-[#7A5195]">NO</p>
-                                       <div class="w-px h-4 bg-gray-300 my-1"></div>
-                                       <div class="bg-[#7A5195] text-white font-bold p-3 rounded-lg shadow-md">안정적인 DB형 추천</div>
-                                       <p class="text-xs text-gray-600 mt-2">회사가 운용을 책임져<br>투자에 대한 부담 없음</p>
-                                   </div>
-                               </div>
-                           </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-10 border-t-2 border-gray-100 pt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-bold text-lg text-center text-[#7A5195] mb-4">DB형 상세 분석</h4>
-                        <div class="mb-4">
-                            <p class="font-semibold text-green-600">👍 장점</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-                                <li><strong>높은 안정성:</strong> 정해진 금액을 수령하여 노후 예측이 용이.</li>
-                                <li><strong>임금 상승 반영:</strong> 승진 등 퇴직 직전 임금 상승 시 퇴직급여도 증가.</li>
-                                <li><strong>운용 편의성:</strong> 회사가 운용을 책임져 투자 부담 없음.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-red-600">👎 단점</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-                                <li><strong>수익성 한계:</strong> 개인의 투자 성과가 반영되지 않아 추가 수익 기대 어려움.</li>
-                                <li><strong>임금피크제 취약:</strong> 퇴직 전 임금 삭감 시 퇴직급여도 함께 감소.</li>
-                                <li><strong>기업 리스크:</strong> 회사 재정 악화 시 적립금 부족 사태 발생 가능.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-bold text-lg text-center text-[#EF5675] mb-4">DC형 상세 분석</h4>
-                        <div class="mb-4">
-                            <p class="font-semibold text-green-600">👍 장점</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-                                <li><strong>높은 수익 기대:</strong> 운용 성과에 따라 퇴직 자산을 크게 늘릴 수 있음.</li>
-                                <li><strong>임금피크제 무관:</strong> 매년 임금총액 기준으로 적립되어 영향 없음.</li>
-                                <li><strong>중도 인출 가능:</strong> 법정 사유 발생 시 긴급 자금으로 활용 가능.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-red-600">👎 단점</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mt-2">
-                                <li><strong>원금 손실 위험:</strong> 투자 성과가 저조할 경우 퇴직급여 감소 가능.</li>
-                                <li><strong>개인의 운용 책임:</strong> 모든 운용 책임이 근로자 본인에게 있음.</li>
-                                <li><strong>투자 지식 필요:</strong> 수익률 제고를 위해 지속적인 학습과 관심 요구.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 bg-sky-50 border-2 border-sky-200 rounded-lg p-6">
+                <div class="bg-sky-50 border-t-2 border-sky-200 py-6 px-6 md:px-8">
                     <h4 class="font-bold text-lg text-sky-700 mb-3 flex items-center">
                         <span class="text-2xl mr-2">💡</span>
                         상담 Point
                     </h4>
                     <ul class="list-disc list-inside text-gray-800 space-y-2 text-sm md:text-base">
-                        <li>퇴직연금은 노후 준비의 '필수'이지만 '전부'는 아닙니다. 안정적인 DB형이든, 수익을 추구하는 DC형이든, 추가적인 개인연금으로 '제2의 월급'을 준비해야 풍요로운 노후가 가능합니다.</li>
-                        <li>특히 DC형 가입자는 투자 위험에 직접 노출됩니다. 원금 손실의 불안함 없이 '최저보증이율'로 안정적인 수익을 쌓아가는 연금보험으로 위험을 분산하는 전략이 현명합니다.</li>
+                        <li>튼튼한 집을 지을 때 기초공사가 중요하듯, <strong>퇴직연금은 노후라는 집의 '기초공사'</strong>입니다. 하지만 기초만으로는 비바람을 막을 수 없듯, 퇴직연금만으로는 부족합니다. 든든한 '기둥'이 되어 줄 개인연금으로 '제2의 월급'을 만들어야 합니다.</li>
+                        <li>특히 DC형 가입 고객님들은 투자 수익률에 따라 미래가 달라지는 불안감을 안고 계십니다. 시장 상황에 따라 밤잠 설치는 투자가 아닌, <strong>마음 편히 쉴 수 있는 '안전지대'</strong>가 필요합니다. 변동성 높은 투자상품과 함께, '최저보증이율'로 어떤 상황에서도 약속된 수익을 차곡차곡 쌓아주는 연금보험으로 자산 포트폴리오의 균형을 맞춰야 합니다.</li>
                     </ul>
                 </div>
             </div>
         </section>
         
         <section id="part2" class="mb-12">
-            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-[#003F5C] border-b-4 border-[#FFA600] pb-2 mb-6">제2부: 개인연금제도 - 노후를 더 풍요롭게</h2>
-                <p class="text-gray-700 mb-8">퇴직급여만으로는 충분하지 않은 노후를 대비하기 위해 개인연금은 필수입니다. 세금 혜택 여부에 따라 크게 '세제적격'과 '세제비적격'으로 나뉘며, 각각의 장단점과 특징을 명확히 이해하는 것이 중요합니다.</p>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
-                        <h3 class="text-2xl font-bold text-[#BC5090] mb-3">1. 세제적격 개인연금 (연금저축 & IRP)</h3>
-                        <p class="text-gray-600 mb-4">납입 시 <strong class="text-[#BC5090]">세액공제</strong>, 인출 시 <strong class="text-[#BC5090]">연금소득세</strong>가 과세(EET)되는 '절세 특화' 연금입니다.</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C] border-b-4 border-[#FFA600] pb-2 mb-6">제2부: 개인연금제도 - 노후를 더 풍요롭게</h2>
+                    <p class="text-gray-700 mb-8">퇴직급여만으로는 충분하지 않은 노후를 대비하기 위해 개인연금은 필수입니다. 세금 혜택 여부에 따라 크게 '세제적격'과 '세제비적격'으로 나뉘며, 각각의 장단점과 특징을 명확히 이해하는 것이 중요합니다.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                            <h3 class="text-2xl font-bold text-[#BC5090] mb-3">1. 세제적격 개인연금 (연금저축 & IRP)</h3>
+                            <p class="text-gray-600 mb-4">납입 시 <strong class="text-[#BC5090]">세액공제</strong>, 인출 시 <strong class="text-[#BC5090]">연금소득세</strong>가 과세(EET)되는 '절세 특화' 연금입니다.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>강력한 세액공제 (연 최대 148.5만원)</li>
+                                        <li>과세이연으로 재투자 효과 극대화</li>
+                                        <li>저율 분리과세(3.3~5.5%)로 세금 부담 완화</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>장기 의무가입 (최소 5년, 55세 이후 수령)</li>
+                                        <li>중도해지 시 16.5% 기타소득세 부과</li>
+                                        <li>IRP는 위험자산 투자한도 70% 제한</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <h4 class="font-bold text-[#374C80] mb-2 text-center">Benefit 1: 직접적인 세금 환급 효과</h4>
+                                 <div class="chart-container" style="height:280px; max-height:300px;">
+                                    <canvas id="taxBenefitChart"></canvas>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 mt-2">연 900만원 납입 시(총급여 5,500만원 이하), 연말정산으로 <strong class="text-xl text-[#EF5675]">148.5만원</strong>이 환급됩니다.</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-bold text-[#374C80] mb-2 text-center">Benefit 2: 복리를 극대화하는 과세이연 효과</h4>
+                                <div class="chart-container" style="height:280px; max-height:300px;">
+                                    <canvas id="taxDeferralChart"></canvas>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 mt-2">운용수익에 대한 세금을 인출 시점까지 미뤄주어, 세후 재투자에 비해 최종 수령액이 크게 늘어납니다.</p>
+                            </div>
+
                             <div>
-                                <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
+                                <h4 class="font-bold text-yellow-600 mb-2">💡 꼭 알아둘 점!</h4>
                                 <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>강력한 세액공제 (연 최대 148.5만원)</li>
-                                    <li>과세이연으로 재투자 효과 극대화</li>
-                                    <li>저율 분리과세(3.3~5.5%)로 세금 부담 완화</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>장기 의무가입 (최소 5년, 55세 이후 수령)</li>
-                                    <li>중도해지 시 16.5% 기타소득세 부과</li>
-                                    <li>IRP는 위험자산 투자한도 70% 제한</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="mb-6">
-                            <h4 class="font-bold text-[#374C80] mb-2 text-center">Benefit 1: 직접적인 세금 환급 효과</h4>
-                             <div class="chart-container" style="height:280px; max-height:300px;">
-                                <canvas id="taxBenefitChart"></canvas>
-                            </div>
-                            <p class="text-center text-sm text-gray-600 mt-2">연 900만원 납입 시(총급여 5,500만원 이하), 연말정산으로 <strong class="text-xl text-[#EF5675]">148.5만원</strong>이 환급됩니다.</p>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-bold text-[#374C80] mb-2 text-center">Benefit 2: 복리를 극대화하는 과세이연 효과</h4>
-                            <div class="chart-container" style="height:280px; max-height:300px;">
-                                <canvas id="taxDeferralChart"></canvas>
-                            </div>
-                            <p class="text-center text-sm text-gray-600 mt-2">운용수익에 대한 세금을 인출 시점까지 미뤄주어, 세후 재투자에 비해 최종 수령액이 크게 늘어납니다.</p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-yellow-600 mb-2">💡 꼭 알아둘 점!</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                <li><strong>납입한도(1,800만원) ≠ 세액공제 한도(900만원)</strong>임을 명확히 구분하세요.</li>
-                                <li>상품 변경 시 해지 대신 <strong>'계약 이전'</strong> 제도를 활용하여 세제 혜택을 유지하세요.</li>
-                                <li>연금 수령 시 연 <strong>1,500만원 초과</strong> 시 종합과세 될 수 있으므로 인출 계획이 필요합니다.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-green-50 p-6 rounded-xl border-2 border-green-200">
-                        <h3 class="text-2xl font-bold text-[#7A5195] mb-3">2. 세제비적격 개인연금 (연금보험)</h3>
-                        <p class="text-gray-600 mb-4">보험차익에 대해 <strong class="text-[#7A5195]">이자소득세가 비과세</strong>(TEE)되는 '장기 목돈 마련'에 유리한 상품으로, 아래의 핵심 요건을 충족해야 합니다.</p>
-
-                        <div class="bg-white p-4 rounded-lg shadow-inner mb-6">
-                           <p class="font-bold text-gray-800 mb-2">💡 비과세 핵심 요건</p>
-                           <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                               <li><strong>계약 유지 기간:</strong> 10년 이상 유지</li>
-                               <li><strong>월납 보험료:</strong> 5년 이상 납입 & 월 150만원 이하</li>
-                               <li><strong>일시납 보험료:</strong> 1억원 이하</li>
-                           </ul>
-                           <p class="text-xs text-gray-500 mt-2">* 위 요건은 가입 시점 및 관련 세법 개정에 따라 달라질 수 있습니다.</p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>10년 이상 유지 시 이자소득 전액 비과세</li>
-                                    <li>중도인출, 납입중지 등 유연한 자금 활용</li>
-                                    <li>최저보증이율로 안정성 확보(금리연동형)</li>
-                                    <li>종신연금형을 통한 평생 현금 흐름 확보</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>높은 초기 사업비로 원금 회복 기간 필요</li>
-                                    <li>납입 시 세액공제 혜택 없음</li>
-                                    <li>월납, 일시납 등 비과세 요건이 복잡함</li>
+                                    <li><strong>납입한도(1,800만원) ≠ 세액공제 한도(900만원)</strong>임을 명확히 구분하세요.</li>
+                                    <li>상품 변경 시 해지 대신 <strong>'계약 이전'</strong> 제도를 활용하여 세제 혜택을 유지하세요.</li>
+                                    <li>연금 수령 시 연 <strong>1,500만원 초과</strong> 시 종합과세 될 수 있으므로 인출 계획이 필요합니다.</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="bg-white p-4 rounded-lg shadow-inner">
-                             <h4 class="font-bold text-yellow-600 mb-2">💡 꼭 알아둘 점!</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                <li>비과세 혜택을 위해 <strong>최소 10년 이상 장기 유지</strong>가 필수적입니다.</li>
-                                <li>가입 전 상품설명서를 통해 <strong>사업비 수준을 반드시 확인</strong>하고 비교해야 합니다.</li>
-                                <li><strong>변액연금</strong>은 원금 손실 위험이 있는 투자 상품이므로 신중하게 판단해야 합니다.</li>
-                            </ul>
+                        <div class="bg-green-50 p-6 rounded-xl border-2 border-green-200">
+                            <h3 class="text-2xl font-bold text-[#7A5195] mb-3">2. 세제비적격 개인연금 (연금보험)</h3>
+                            <p class="text-gray-600 mb-4">보험차익에 대해 <strong class="text-[#7A5195]">이자소득세가 비과세</strong>(TEE)되는 '장기 목돈 마련'에 유리한 상품으로, 아래의 핵심 요건을 충족해야 합니다.</p>
+
+                            <div class="bg-white p-4 rounded-lg shadow-inner mb-6">
+                               <p class="font-bold text-gray-800 mb-2">💡 비과세 핵심 요건</p>
+                               <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                   <li><strong>계약 유지 기간:</strong> 10년 이상 유지</li>
+                                   <li><strong>월납 보험료:</strong> 5년 이상 납입 & 월 150만원 이하</li>
+                                   <li><strong>일시납 보험료:</strong> 1억원 이하</li>
+                               </ul>
+                               <p class="text-xs text-gray-500 mt-2">* 위 요건은 가입 시점 및 관련 세법 개정에 따라 달라질 수 있습니다.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>10년 이상 유지 시 이자소득 전액 비과세</li>
+                                        <li>중도인출, 납입중지 등 유연한 자금 활용</li>
+                                        <li>최저보증이율로 안정성 확보(금리연동형)</li>
+                                        <li>종신연금형을 통한 평생 현금 흐름 확보</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>높은 초기 사업비로 원금 회복 기간 필요</li>
+                                        <li>납입 시 세액공제 혜택 없음</li>
+                                        <li>월납, 일시납 등 비과세 요건이 복잡함</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow-inner">
+                                 <h4 class="font-bold text-yellow-600 mb-2">💡 꼭 알아둘 점!</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                    <li>비과세 혜택을 위해 <strong>최소 10년 이상 장기 유지</strong>가 필수적입니다.</li>
+                                    <li>가입 전 상품설명서를 통해 <strong>사업비 수준을 반드시 확인</strong>하고 비교해야 합니다.</li>
+                                    <li><strong>변액연금</strong>은 원금 손실 위험이 있는 투자 상품이므로 신중하게 판단해야 합니다.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-8 bg-sky-50 border-2 border-sky-200 rounded-lg p-6">
+                <div class="bg-sky-50 border-t-2 border-sky-200 py-6 px-6 md:px-8">
                     <h4 class="font-bold text-lg text-sky-700 mb-3 flex items-center">
                         <span class="text-2xl mr-2">💡</span>
                         상담 Point
                     </h4>
                     <ul class="list-disc list-inside text-gray-800 space-y-2 text-sm md:text-base">
-                        <li>연금저축과 IRP의 세액공제 혜택은 '연말정산용'으로 매우 훌륭합니다. 하지만 중도해지 페널티가 크고, 투자 성과에 따라 연금액이 변동된다는 점을 기억해야 합니다.</li>
-                        <li><strong>세제비적격 연금보험</strong>은 이러한 단점을 보완하는 최고의 파트너입니다. 10년 이상 유지 시 '완전 비과세' 혜택으로 금융소득종합과세를 피할 수 있으며, '종신 지급' 기능으로 사망 시까지 마르지 않는 현금 흐름을 확보해 '장수 리스크'에 완벽히 대비할 수 있습니다.</li>
-                        <li>"세액공제는 IRP로, 100세 시대의 안정적인 현금 흐름은 비과세 연금보험으로!" 두 마리 토끼를 모두 잡는 포트폴리오를 구성해 드립니다.</li>
+                        <li>연금저축/IRP의 세액공제는 당장 눈앞의 세금을 줄여주니 매우 매력적입니다. 하지만 '조삼모사'와 같습니다. 지금 혜택받은 세금은 나중에 연금받을 때 '연금소득세'로 내야 합니다. 중도해지 시에는 더 큰 페널티가 따르는 '유리상자' 속 자산입니다.</li>
+                        <li><strong>세제비적격 연금보험은 진정한 '평생 비과세 통장'</strong>입니다. 10년만 유지하면 여기서 발생하는 이자수익은 평생 세금 한 푼 내지 않습니다. 금융소득종합과세를 걱정하는 자산가에게는 최고의 절세 상품이며, '종신 지급' 기능으로 내가 살아있는 동안은 마르지 않는 현금 흐름을 만들어 '100세 시대의 장수 리스크'를 완벽하게 막아줍니다.</li>
+                        <li>"연말정산은 IRP로 똑똑하게, 내 노후자산은 비과세 연금보험으로 안전하고 풍요롭게!" 단기 절세와 장기적인 비과세 자산 증식, 두 마리 토끼를 잡는 완벽한 포트폴리오를 구성해 드립니다.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="part3" class="mb-12">
-            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-[#003F5C] border-b-4 border-[#FFA600] pb-2 mb-6">제3부: 역모기지연금 - 내 자산으로 만드는 현금 흐름</h2>
-                <p class="text-gray-700 mb-8">보유한 주택이나 농지를 활용하여 평생 거주하면서 안정적인 노후 생활 자금을 마련할 수 있는 제도입니다. 국가가 보증하여 안정성이 매우 높습니다.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-orange-50 rounded-xl border-2 border-orange-200 p-6 flex flex-col">
-                        <h3 class="text-2xl font-bold text-center text-[#FF764A] mb-4">🏠 주택연금</h3>
-                        <div class="bg-white p-4 rounded-lg shadow-inner mb-4">
-                           <p class="text-gray-700"><strong class="text-[#FF764A]">정의:</strong> 만 55세 이상 주택 소유자가 자가에 평생 거주하며 이를 담보로 매월 연금을 받는 제도입니다.</p>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C] border-b-4 border-[#FFA600] pb-2 mb-6">제3부: 역모기지연금 - 내 자산으로 만드는 현금 흐름</h2>
+                    <p class="text-gray-700 mb-8">보유한 주택이나 농지를 활용하여 평생 거주하면서 안정적인 노후 생활 자금을 마련할 수 있는 제도입니다. 국가가 보증하여 안정성이 매우 높습니다.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-orange-50 rounded-xl border-2 border-orange-200 p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold text-center text-[#FF764A] mb-4">🏠 주택연금</h3>
+                            <div class="bg-white p-4 rounded-lg shadow-inner mb-4">
+                               <p class="text-gray-700"><strong class="text-[#FF764A]">정의:</strong> 만 55세 이상 주택 소유자가 자가에 평생 거주하며 이를 담보로 매월 연금을 받는 제도입니다.</p>
+                            </div>
+                            <div class="space-y-4 flex-grow">
+                                <div>
+                                    <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>안정적인 거주 및 소득 확보 (평생 거주)</li>
+                                        <li>국가 보증 (지급 중단 위험 없음)</li>
+                                        <li>부채 상속 방지 (부족분 미청구)</li>
+                                        <li>세제 혜택 (재산세 감면 등)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>주택 소유권 제약 (임대, 매매 제한)</li>
+                                        <li>자산 가치 상승분 미반영</li>
+                                        <li>상속 자산 감소</li>
+                                        <li>각종 비용 발생 (보증료, 이자 등)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-yellow-600 mb-2">💡 주의사항</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>가입 전 자녀와 충분한 협의는 필수</li>
+                                        <li>금리 상승 시 이자 부담 증가 가능</li>
+                                        <li>1년 이상 미거주 등 지급정지 사유 숙지</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="space-y-4 flex-grow">
-                            <div>
-                                <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>안정적인 거주 및 소득 확보 (평생 거주)</li>
-                                    <li>국가 보증 (지급 중단 위험 없음)</li>
-                                    <li>부채 상속 방지 (부족분 미청구)</li>
-                                    <li>세제 혜택 (재산세 감면 등)</li>
+                        <div class="bg-yellow-50 rounded-xl border-2 border-yellow-200 p-6 flex flex-col">
+                            <h3 class="text-2xl font-bold text-center text-[#FFA600] mb-4">🌾 농지연금</h3>
+                            <div class="bg-white p-4 rounded-lg shadow-inner mb-4">
+                               <p class="text-gray-700"><strong class="text-[#FFA600]">정의:</strong> 만 60세 이상, 영농경력 5년 이상의 농업인이 농지를 담보로 연금을 받는 제도입니다.</p>
+                            </div>
+                             <div class="space-y-4 flex-grow">
+                                <div>
+                                    <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>영농 지속 및 추가 소득 창출 가능</li>
+                                        <li>강력한 재산세 혜택 (6억 이하 전액 감면)</li>
+                                        <li>국가 보증 및 안정성</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>엄격한 가입 요건 (영농경력 5년)</li>
+                                        <li>담보 농지 제한 (개발제한구역 등)</li>
+                                        <li>월지급액이 기대보다 적을 수 있음</li>
+                                    </ul>
+                                </div>
+                                 <div>
+                                    <h4 class="font-bold text-yellow-600 mb-2">💡 주의사항</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                        <li>5년 이상 영농 경력 명확히 증빙 필요</li>
+                                        <li>담보 농지에 제한물권, 불법 시설물 없는지 확인</li>
+                                        <li>지급 방식은 한번 선택하면 변경 어려움</li>
                                 </ul>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>주택 소유권 제약 (임대, 매매 제한)</li>
-                                    <li>자산 가치 상승분 미반영</li>
-                                    <li>상속 자산 감소</li>
-                                    <li>각종 비용 발생 (보증료, 이자 등)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-yellow-600 mb-2">💡 주의사항</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>가입 전 자녀와 충분한 협의는 필수</li>
-                                    <li>금리 상승 시 이자 부담 증가 가능</li>
-                                    <li>1년 이상 미거주 등 지급정지 사유 숙지</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-yellow-50 rounded-xl border-2 border-yellow-200 p-6 flex flex-col">
-                        <h3 class="text-2xl font-bold text-center text-[#FFA600] mb-4">🌾 농지연금</h3>
-                        <div class="bg-white p-4 rounded-lg shadow-inner mb-4">
-                           <p class="text-gray-700"><strong class="text-[#FFA600]">정의:</strong> 만 60세 이상, 영농경력 5년 이상의 농업인이 농지를 담보로 연금을 받는 제도입니다.</p>
-                        </div>
-                         <div class="space-y-4 flex-grow">
-                            <div>
-                                <h4 class="font-bold text-green-700 mb-2">👍 장점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>영농 지속 및 추가 소득 창출 가능</li>
-                                    <li>강력한 재산세 혜택 (6억 이하 전액 감면)</li>
-                                    <li>국가 보증 및 안정성</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-red-700 mb-2">👎 단점</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>엄격한 가입 요건 (영농경력 5년)</li>
-                                    <li>담보 농지 제한 (개발제한구역 등)</li>
-                                    <li>월지급액이 기대보다 적을 수 있음</li>
-                                </ul>
-                            </div>
-                             <div>
-                                <h4 class="font-bold text-yellow-600 mb-2">💡 주의사항</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                    <li>5년 이상 영농 경력 명확히 증빙 필요</li>
-                                    <li>담보 농지에 제한물권, 불법 시설물 없는지 확인</li>
-                                    <li>지급 방식은 한번 선택하면 변경 어려움</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="mt-8 bg-sky-50 border-2 border-sky-200 rounded-lg p-6">
+                <div class="bg-sky-50 border-t-2 border-sky-200 py-6 px-6 md:px-8">
                     <h4 class="font-bold text-lg text-sky-700 mb-3 flex items-center">
                         <span class="text-2xl mr-2">💡</span>
                         상담 Point
                     </h4>
+                    <p class="text-gray-700 mb-4 text-sm md:text-base">주택과 농지는 단순한 자산이 아닌, 가족의 소중한 유산입니다. 각 자산의 특성에 맞는 상담 전략이 필요합니다.</p>
+                    
+                    <h5 class="font-bold text-[#FF764A] mb-2">🏠 주택연금 상담 Tip</h5>
+                    <ul class="list-disc list-inside text-gray-800 space-y-2 text-sm md:text-base mb-4">
+                        <li>고객님의 집은 단순한 재산이 아니라, 가족의 '역사'이자 자녀에게 물려줄 '미래'입니다. 주택연금은 당장의 현금 흐름을 만들어주지만, 이 소중한 자산을 국가에 넘기는 것과 같습니다. 한번 가입하면 다시 되돌릴 수 없는 '일방통행' 길입니다.</li>
+                        <li>앞으로 집값이 아무리 올라도 내 연금액은 그대로입니다. 자산 증식의 기회는 사라지고, 나중에 남는 돈만 자녀에게 상속됩니다. <strong>미래 가치를 포기하고 현재 가치만 받는 셈</strong>입니다.</li>
+                        <li>가장 이상적인 플랜은 <strong>'내 집은 온전히 지키면서, 준비된 연금보험으로 여유로운 노후를 보내고, 마지막에는 자녀에게 집을 온전히 상속'</strong>해주는 것입니다. 주택연금은 다른 모든 준비가 부족할 때 마지막으로 기댈 수 있는 '최후의 보루'로 남겨두시는 것이 현명합니다.</li>
+                    </ul>
+
+                    <h5 class="font-bold text-[#FFA600] mb-2">🌾 농지연금 상담 Tip</h5>
                     <ul class="list-disc list-inside text-gray-800 space-y-2 text-sm md:text-base">
-                        <li>주택/농지연금은 지금 살고 있는 집에서 안정적인 소득을 얻는 좋은 제도이지만, 자녀에게 물려줄 소중한 자산이 사라진다는 단점이 있습니다.</li>
-                        <li>주택 가격이 올라도 연금액이 늘어나지 않고, 남은 차액만 상속되므로 자산 증식 기회를 잃을 수 있습니다.</li>
-                        <li>내 집은 온전히 지키면서, 준비된 연금보험으로 여유로운 노후를 보내고, 마지막에는 자녀에게 집을 상속해주는 것이 가장 이상적인 플랜입니다. 주택연금은 다른 준비가 부족할 때 고려할 '최후의 보루'로 남겨두시는 것을 추천합니다.</li>
+                        <li>고객님의 농지는 단순한 땅이 아니라, 대를 이어 땀과 정성으로 일궈온 <strong>'가업의 터전'</strong>이자 '삶의 뿌리'입니다. 농지연금은 안정적인 소득을 약속하지만, 자녀에게 물려줄 '농사라는 업'의 가치를 함께 고려해야 합니다.</li>
+                        <li>농지연금은 가입 후에도 직접 경작하거나 임대할 수 있는 장점이 있습니다. 이 점을 활용해 <strong>연금 수령액과 추가 소득(경작/임대)을 합친 금액</strong>과, <strong>농지를 담보로 다른 금융 상품을 활용했을 때의 기대 수익</strong>을 구체적인 숫자로 비교하여 고객님께 가장 유리한 선택지를 제시해 드리는 것이 중요합니다.</li>
+                        <li>주택과 달리 농지는 자산 가치 상승폭이 크지 않을 수 있습니다. 따라서 '최후의 보루'인 주택연금과는 달리, 농지연금은 <strong>'추가 소득원 확보'</strong>라는 관점에서 보다 적극적으로 검토해볼 수 있는 플랜임을 안내해 드립니다. 단, 이 경우에도 비과세 연금보험 등 다른 대안과 충분히 비교한 후 신중하게 결정해야 합니다.</li>
                     </ul>
                 </div>
             </div>
@@ -555,5 +571,4 @@
     </script>
 </body>
 </html>
-
 
