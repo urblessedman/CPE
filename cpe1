@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사적연금제도 종합 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        /* 섹션 제목 스타일 */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #1a202c;
+        }
+        .subsection-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        /* 카드 스타일 */
+        .info-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        /* 테이블 스타일 */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .styled-table th, .styled-table td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .styled-table th {
+            background-color: #f7fafc;
+            font-weight: 600;
+        }
+        /* 네비게이션 스타일 */
+        nav a {
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #2b6cb0;
+        }
+        /* 스크롤 애니메이션을 위한 JS */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">사적연금제도 종합 안내</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#retirement-benefit" class="text-gray-600 font-medium">퇴직급여제도</a>
+                <a href="#individual-pension" class="text-gray-600 font-medium">개인연금제도</a>
+                <a href="#reverse-mortgage" class="text-gray-600 font-medium">역모기지연금</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- 제1부. 퇴직급여제도 -->
+        <section id="retirement-benefit" class="mb-16">
+            <h2 class="section-title">제1부. 퇴직급여제도</h2>
+
+            <!-- 제1절. 퇴직급여제도 설정 및 유형 -->
+            <article>
+                <h3 class="subsection-title">제1절. 퇴직급여제도 설정 및 유형</h3>
+                <div class="info-card">
+                    <h4 class="text-xl font-bold mb-3 flex items-center"><i data-lucide="book-marked" class="mr-2"></i>퇴직급여제도 유형</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong class="text-indigo-600">퇴직연금제도 (Retirement Pension System)</strong>
+                            <ul class="list-disc list-inside mt-2 ml-4 space-y-2 text-gray-700">
+                                <li><strong>확정급여형 (DB: Defined Benefit):</strong> 근로자가 퇴직 시 받을 급여가 사전에 결정된 제도. 급여 수준이 퇴직금과 동일하게 보장됩니다. (퇴직 전 30일분 평균임금 × 근속연수)</li>
+                                <li><strong>확정기여형 (DC: Defined Contribution):</strong> 사용자가 납입할 부담금 수준이 사전에 결정된 제도. 매년 근로자 연간 임금총액의 1/12 이상을 근로자 개인 계좌에 납입합니다.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="text-indigo-600">퇴직금제도 (Severance Pay System)</strong>
+                            <p class="mt-1 text-gray-700">계속근로기간 1년에 대하여 30일분 이상의 평균임금을 퇴직 시 일시금으로 지급하는 전통적인 제도입니다.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="info-card">
+                        <h4 class="text-xl font-bold mb-3 flex items-center"><i data-lucide="building-2" class="mr-2"></i>도입 의무 및 절차</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>사용자는 하나 이상의 퇴직급여제도를 의무적으로 설정해야 합니다.</li>
+                            <li>기업 설립 후 1년 내 퇴직연금제도 미설정 시 퇴직금제도를 설정한 것으로 간주됩니다.</li>
+                            <li>제도 설정 또는 변경 시 근로자대표의 동의가 필수입니다.</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4 class="text-xl font-bold mb-3 flex items-center"><i data-lucide="user-x" class="mr-2"></i>적용 제외 근로자</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                           <li>계속근로기간이 1년 미만인 근로자.</li>
+                           <li>4주 평균 1주 소정근로시간이 15시간 미만인 근로자.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 제2절. 퇴직급여 수급권 보호 장치 -->
+            <article>
+                <h3 class="subsection-title">제2절. 퇴직급여 수급권 보호 장치</h3>
+                 <div class="info-card bg-blue-50 border border-blue-200">
+                    <h4 class="text-xl font-bold mb-3 text-blue-800 flex items-center"><i data-lucide="shield-check" class="mr-2"></i>핵심 보호 장치</h4>
+                    <div class="space-y-3">
+                        <p><strong>외부 예치:</strong> 퇴직연금 적립금은 외부 금융기관에 예치되어 기업 파산 시에도 수급권이 보호됩니다. (퇴직금은 외부 예치 의무 없음)</p>
+                        <p><strong>담보 제공 및 압류 금지:</strong> 퇴직급여 수급권은 원칙적으로 양도, 압류, 담보 제공이 금지됩니다. (법정 사유 예외 존재)</p>
+                        <p><strong>우선 변제:</strong> 기업 총재산에 대해 다른 채권보다 우선 변제되며, 최종 3년간의 퇴직급여는 최우선 변제 대상입니다.</p>
+                        <p><strong>부담금 미납 시 지연이자:</strong> 미지급 시 연 20%의 높은 지연이자가 부과됩니다.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 제3절. 퇴직연금 지배구조 및 특징 -->
+            <article>
+                <h3 class="subsection-title">제3절. 퇴직연금 지배구조 및 특징</h3>
+                <div class="info-card">
+                     <h4 class="text-xl font-bold mb-3">지배구조: 계약형 vs. 기금형</h4>
+                    <div class="overflow-x-auto">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>기금형</th>
+                                    <th>계약형 (현재 한국의 일반적 방식)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>관리 주체</td>
+                                    <td>수탁법인(비영리)</td>
+                                    <td>퇴직연금사업자</td>
+                                </tr>
+                                <tr>
+                                    <td>적립금 운용</td>
+                                    <td>기금운용위원회</td>
+                                    <td>사용자(DB), 근로자(DC)</td>
+                                </tr>
+                                <tr>
+                                    <td>기업비용</td>
+                                    <td>높음</td>
+                                    <td>낮음</td>
+                                </tr>
+                                <tr>
+                                    <td>감독 대상</td>
+                                    <td>개별 기금</td>
+                                    <td>퇴직연금사업자</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- DB vs DC 상세 비교 -->
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <!-- DB형 -->
+                    <div class="info-card border-t-4 border-green-500">
+                        <h4 class="text-2xl font-bold mb-4 text-green-700">확정급여형(DB) 특징</h4>
+                        <div>
+                            <h5 class="font-semibold text-lg mb-2 flex items-center text-green-600"><i data-lucide="thumbs-up" class="mr-2"></i>장점</h5>
+                            <ul class="list-disc list-inside space-y-1 mb-4">
+                                <li>안정성: 받을 급여액이 확정되어 예측 가능</li>
+                                <li>임금상승률 반영: 임금상승률이 높은 근로자에게 유리</li>
+                                <li>편의성: 근로자가 직접 운용할 필요 없음</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-lg mb-2 flex items-center text-red-600"><i data-lucide="thumbs-down" class="mr-2"></i>단점</h5>
+                            <ul class="list-disc list-inside space-y-1 mb-4">
+                                <li>수익성 한계: 추가 수익 기대 어려움</li>
+                                <li>임금피크제 취약: 퇴직 직전 임금 삭감 시 급여 감소</li>
+                                <li>기업 리스크: 회사 재정 악화 시 적립금 부족 가능성</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-lg mb-2 flex items-center text-yellow-600"><i data-lucide="alert-triangle" class="mr-2"></i>주의사항</h5>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>회사의 재정 검증 결과를 주기적으로 확인</li>
+                                <li>임금피크제 도입 시 DC형으로의 전환 고려</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- DC형 -->
+                    <div class="info-card border-t-4 border-blue-500">
+                        <h4 class="text-2xl font-bold mb-4 text-blue-700">확정기여형(DC) 특징</h4>
+                        <div>
+                            <h5 class="font-semibold text-lg mb-2 flex items-center text-green-600"><i data-lucide="thumbs-up" class="mr-2"></i>장점</h5>
+                            <ul class="list-disc list-inside space-y-1 mb-4">
+                                <li>수익성 기대: 운용 성과에 따라 높은 수익 가능</li>
+                                <li>임금피크제 무관: 임금피크제 영향 없음</li>
+                                <li>중도 인출 가능: 법정 사유 발생 시 긴급 자금 활용</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-lg mb-2 flex items-center text-red-600"><i data-lucide="thumbs-down" class="mr-2"></i>단점</h5>
+                            <ul class="list-disc list-inside space-y-1 mb-4">
+                                <li>운용 책임 및 원금 손실 위험</li>
+                                <li>투자 지식 필요: 근로자 스스로 학습 필요</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold text-lg mb-2 flex items-center text-yellow-600"><i data-lucide="alert-triangle" class="mr-2"></i>주의사항</h5>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>디폴트옵션(사전지정운용제도) 적극 활용</li>
+                                <li>주기적인 포트폴리오 관리 및 리밸런싱</li>
+                                <li>세액공제 한도 내 추가 납입 활용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- 제4절. 퇴직연금계좌의 운용 및 세금 -->
+             <article>
+                <h3 class="subsection-title">제4절. 퇴직연금계좌의 운용 및 세금</h3>
+                <div class="info-card">
+                    <h4 class="text-xl font-bold mb-3 flex items-center"><i data-lucide="trending-up" class="mr-2"></i>DC형 적립금 운용</h4>
+                    <p>근로자가 직접 운용하며, 투자 한도는 상품 유형에 따라 다릅니다.</p>
+                     <div class="overflow-x-auto">
+                        <table class="styled-table">
+                           <thead>
+                                <tr>
+                                    <th>상품 구분</th>
+                                    <th>주요 상품</th>
+                                    <th>적립금 투자한도</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>원리금보장상품</td>
+                                    <td>정기예금, 이율보증보험 등</td>
+                                    <td>100%</td>
+                                </tr>
+                                 <tr>
+                                    <td>분산투자 상품</td>
+                                    <td>TDF, 채권혼합형 펀드/ETF 등</td>
+                                    <td>100%</td>
+                                </tr>
+                                <tr>
+                                    <td>위험자산</td>
+                                    <td>주식혼합형 펀드/ETF, 리츠 등</td>
+                                    <td>70%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                     </div>
+                </div>
+                 <div class="info-card">
+                    <h4 class="text-xl font-bold mb-3 flex items-center"><i data-lucide="landmark" class="mr-2"></i>퇴직 시 IRP 계좌로의 의무 이체</h4>
+                    <p>퇴직급여는 IRP(개인형퇴직연금) 계좌로 이체하여야 하며, 이를 통해 퇴직소득세 납부를 연금 수령 시점까지 이연(Tax Deferral)시킬 수 있습니다. 연금으로 수령 시 30% 감면된 낮은 세율(11년차부터 40% 감면)의 연금소득세가 적용됩니다.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- 상담 포인트 1: 퇴직급여제도 -->
+        <div class="info-card bg-sky-50 border border-sky-200 mt-8">
+            <h4 class="text-xl font-bold mb-3 text-sky-800 flex items-center">
+                <i data-lucide="lightbulb" class="mr-2"></i>보험설계사 상담 Point
+            </h4>
+            <ul class="space-y-3 list-disc list-inside text-gray-700">
+                <li>퇴직연금은 노후 준비의 '필수'이지만 '전부'는 아닙니다. 안정적인 DB형이든, 수익을 추구하는 DC형이든, 추가적인 개인연금으로 '제2의 월급'을 준비해야 풍요로운 노후가 가능합니다.</li>
+                <li>특히 DC형 가입자는 투자 위험에 직접 노출됩니다. 원금 손실의 불안함 없이 '최저보증이율'이 적용되는 연금보험 등으로 위험을 분산하는 전략이 현명합니다.</li>
+            </ul>
+        </div>
+
+        <!-- 제2부. 개인연금제도 -->
+        <section id="individual-pension" class="mb-16">
+            <h2 class="section-title">제2부. 개인연금제도</h2>
+
+            <!-- 제1절. 세제적격 개인연금 -->
+            <article>
+                <h3 class="subsection-title">제1절. 세제적격 개인연금 (연금저축 & IRP)</h3>
+                <div class="info-card bg-yellow-50 border border-yellow-200">
+                    <h4 class="text-xl font-bold mb-3 text-yellow-800 flex items-center"><i data-lucide="percent-circle" class="mr-2"></i>납입 시 세액공제 혜택</h4>
+                    <div class="overflow-x-auto">
+                        <table class="styled-table bg-white">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>소득 기준</th>
+                                    <th>납입한도</th>
+                                    <th>세액공제 한도</th>
+                                    <th>세액공제율</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">퇴직연금(DC, IRP)</td>
+                                    <td>총급여 5,500만원 이하</td>
+                                    <td rowspan="4">연 1,800만원</td>
+                                    <td rowspan="2">연 900만원</td>
+                                    <td>16.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>총급여 5,500만원 초과</td>
+                                    <td>13.2%</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">연금저축</td>
+                                    <td>총급여 5,500만원 이하</td>
+                                    <td rowspan="2">연 600만원</td>
+                                    <td>16.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>총급여 5,500만원 초과</td>
+                                    <td>13.2%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p class="mt-4 text-sm text-gray-600">* 연금저축과 퇴직연금(IRP)을 합산하여 최대 900만원까지 세액공제를 받을 수 있습니다.</p>
+                </div>
+                 <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <!-- 장점 -->
+                    <div class="info-card">
+                        <h4 class="font-semibold text-lg mb-2 flex items-center text-green-600"><i data-lucide="thumbs-up" class="mr-2"></i>세제적격 개인연금 장점</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                           <li><strong>강력한 세제혜택:</strong> 연말정산 시 세금 환급 효과</li>
+                           <li><strong>과세이연 효과:</strong> 운용수익 재투자로 복리효과 극대화</li>
+                           <li><strong>저율 분리과세:</strong> 연금 수령 시 3.3%~5.5% 낮은 세율 적용</li>
+                        </ul>
+                    </div>
+                     <!-- 단점 및 주의사항 -->
+                    <div class="info-card">
+                        <h4 class="font-semibold text-lg mb-2 flex items-center text-red-600"><i data-lucide="thumbs-down" class="mr-2"></i>단점 및 주의사항</h4>
+                         <ul class="list-disc list-inside space-y-2">
+                            <li><strong>장기 의무 가입:</strong> 55세 이후 연금 수령 조건</li>
+                            <li><strong>중도해지 시 불이익:</strong> 16.5%의 높은 기타소득세 부과</li>
+                            <li><strong>투자 제약:</strong> IRP는 위험자산 투자 한도 70% 제한</li>
+                            <li><strong>종합과세 가능성:</strong> 연간 사적연금 수령액 1,500만원 초과 시 종합과세 대상이 될 수 있음</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- 제2절. 세제비적격 개인연금 -->
+             <article>
+                <h3 class="subsection-title">제2절. 세제비적격 개인연금 (연금보험)</h3>
+                <div class="info-card">
+                    <h4 class="text-xl font-bold mb-3 flex items-center"><i data-lucide="file-text" class="mr-2"></i>정의 및 특징</h4>
+                    <p>납입 시 세제혜택은 없으나, <strong class="text-indigo-600">일정 요건 충족 시 이자소득에 대해 비과세 혜택</strong>을 제공하는 생명보험사 상품입니다. 운용방식에 따라 금리연동형, 변액연금보험 등으로 나뉩니다.</p>
+                </div>
+                 <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <!-- 장점 -->
+                    <div class="info-card">
+                        <h4 class="font-semibold text-lg mb-2 flex items-center text-green-600"><i data-lucide="thumbs-up" class="mr-2"></i>세제비적격 개인연금 장점</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                           <li><strong>비과세 혜택:</strong> 10년 이상 유지 등 요건 충족 시 이자소득세 면제</li>
+                           <li><strong>유연성:</strong> 중도인출, 납입중지 등 기능 활용 가능</li>
+                           <li><strong>안정성(금리연동형):</strong> 최저보증이율로 최소 수익률 보장</li>
+                           <li><strong>종신 수령 가능:</strong> 사망 시까지 안정적 현금흐름 확보</li>
+                        </ul>
+                    </div>
+                     <!-- 단점 및 주의사항 -->
+                    <div class="info-card">
+                        <h4 class="font-semibold text-lg mb-2 flex items-center text-red-600"><i data-lucide="thumbs-down" class="mr-2"></i>단점 및 주의사항</h4>
+                         <ul class="list-disc list-inside space-y-2">
+                            <li><strong>낮은 초기 수익률:</strong> 높은 사업비로 초기 환급률 낮음</li>
+                            <li><strong>세제혜택 부재:</strong> 납입 시 세액공제 혜택 없음</li>
+                            <li><strong>복잡한 비과세 요건:</strong> 장기 유지(최소 10년) 필수</li>
+                            <li><strong>투자 위험(변액연금):</strong> 원금 손실 가능성 존재</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 상담 포인트 2: 개인연금제도 -->
+        <div class="info-card bg-sky-50 border border-sky-200 mt-8">
+            <h4 class="text-xl font-bold mb-3 text-sky-800 flex items-center">
+                <i data-lucide="lightbulb" class="mr-2"></i>보험설계사 상담 Point
+            </h4>
+            <ul class="space-y-3 list-disc list-inside text-gray-700">
+                <li>'제2의 월급'을 만드는 개인연금은 세액공제 혜택이 큰 세제적격 상품(연금저축, IRP)을 최우선으로 활용하는 것이 기본입니다.</li>
+                <li>여기에 비과세 혜택이 있는 연금보험(세제비적격)을 추가로 활용하면, 투자 위험을 관리(최저보증이율)하면서 종합과세 걱정 없이 연금 수령액을 늘릴 수 있는 훌륭한 포트폴리오가 완성됩니다.</li>
+            </ul>
+        </div>
+
+        <!-- 제3부. 역모기지연금 -->
+        <section id="reverse-mortgage" class="mb-16">
+            <h2 class="section-title">제3부. 역모기지연금</h2>
+
+            <!-- 제1절. 주택연금 -->
+            <article>
+                <h3 class="subsection-title">제1절. 주택연금</h3>
+                <div class="info-card border-t-4 border-orange-500">
+                     <h4 class="text-2xl font-bold mb-4 text-orange-700">주택연금 (Reverse Mortgage Pension)</h4>
+                     <p class="mb-4">만 55세 이상 국민이 소유 주택(공시가 12억 이하)을 담보로 평생 또는 일정 기간 매월 노후생활자금을 받는 국가 보증 금융상품입니다. 가입자 사망 후 주택을 처분하여 상환하며, 부족분은 상속인에게 청구되지 않습니다.</p>
+                     <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                             <h5 class="font-semibold text-lg mb-2 flex items-center text-green-600"><i data-lucide="thumbs-up" class="mr-2"></i>장점</h5>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>안정적인 거주 및 소득 확보</li>
+                                <li>국가 보증으로 지급 중단 위험 없음</li>
+                                <li>부채 상속 방지</li>
+                                <li>재산세 감면 등 세제 혜택</li>
+                            </ul>
+                        </div>
+                        <div>
+                             <h5 class="font-semibold text-lg mb-2 flex items-center text-red-600"><i data-lucide="thumbs-down" class="mr-2"></i>단점</h5>
+                             <ul class="list-disc list-inside space-y-1">
+                                <li>주택 소유권 제약</li>
+                                <li>주택 가격 상승분 미반영</li>
+                                <li>상속 자산 감소</li>
+                                <li>각종 비용 발생 (보증료, 이자 등)</li>
+                            </ul>
+                        </div>
+                     </div>
+                     <div class="mt-4 p-3 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded-md">
+                        <strong>주의사항:</strong> 가입 전 자녀와 충분한 협의가 필요하며, 금리 변동 위험과 지급정지 사유를 미리 숙지해야 합니다.
+                     </div>
+                </div>
+            </article>
+
+            <!-- 제2절. 농지연금 -->
+            <article>
+                <h3 class="subsection-title">제2절. 농지연금</h3>
+                 <div class="info-card border-t-4 border-lime-600">
+                     <h4 class="text-2xl font-bold mb-4 text-lime-800">농지연금 (Farmland Pension)</h4>
+                     <p class="mb-4">만 60세 이상, 영농경력 5년 이상의 농업인이 농지를 담보로 연금을 받는 제도입니다. 주택연금과 유사하게 국가가 보증하며 부채가 상속되지 않습니다.</p>
+                     <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                             <h5 class="font-semibold text-lg mb-2 flex items-center text-green-600"><i data-lucide="thumbs-up" class="mr-2"></i>장점</h5>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>연금 수령 중 영농/임대로 추가 소득 가능</li>
+                                <li>강력한 재산세 혜택 (6억 이하 전액 감면)</li>
+                                <li>국가 보증으로 안정적 지급</li>
+                            </ul>
+                        </div>
+                        <div>
+                             <h5 class="font-semibold text-lg mb-2 flex items-center text-red-600"><i data-lucide="thumbs-down" class="mr-2"></i>단점</h5>
+                             <ul class="list-disc list-inside space-y-1">
+                                <li>엄격한 가입 요건 (영농경력 5년)</li>
+                                <li>담보 농지 제한 가능성</li>
+                                <li>주택연금 대비 월지급액이 적을 수 있음</li>
+                            </ul>
+                        </div>
+                     </div>
+                     <div class="mt-4 p-3 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded-md">
+                        <strong>주의사항:</strong> 영농 경력 증빙이 필수이며, 담보 농지 상태를 사전에 확인해야 합니다. 지급 방식은 한번 선택하면 변경이 어려우므로 신중한 선택이 필요합니다.
+                     </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- 상담 포인트 3: 역모기지연금 -->
+    <div class="container mx-auto px-6 pb-12">
+        <div class="info-card bg-sky-50 border border-sky-200">
+            <h4 class="text-xl font-bold mb-3 text-sky-800 flex items-center">
+                <i data-lucide="lightbulb" class="mr-2"></i>보험설계사 상담 Point
+            </h4>
+            <ul class="space-y-3 list-disc list-inside text-gray-700">
+                <li>주택/농지연금은 보유 자산을 유동화하여 안정적인 현금 흐름을 만드는 훌륭한 제도이지만, 유일한 대안은 아닙니다.</li>
+                <li>가입 전, 자녀에게 부담을 주지 않으면서 안정적인 노후를 보낼 수 있도록 종신형 연금보험 등 다른 금융상품과 월 수령액, 상속 문제 등을 종합적으로 비교해보고 본인에게 가장 유리한 방법을 선택하는 것이 중요합니다.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-4 text-center">
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
